@@ -171,9 +171,9 @@ void handle_process_loop(RequestChannel & _channel) {
 
 int main(int argc, char * argv[]) {
 
-  cout << "Establishing control channel... " << flush;
+  //  cout << "Establishing control channel... " << flush;
   RequestChannel control_channel("control", RequestChannel::SERVER_SIDE);
-  cout << "done.\n" << flush;
+  //  cout << "done.\n" << flush;
 
   handle_process_loop(control_channel);
 

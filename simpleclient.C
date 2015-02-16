@@ -73,11 +73,12 @@ int main(int argc, char * argv[]) {
 	{
 		// error, failed to fork()
 	} 
-	else 
-	{
+  else if(pid == 0){
 		// we are the child
 		 char *arg[12];
-		execvp("dataserver",arg);
+		if(execv("./dataserver",argv) == -1)
+      cout<<"Error, fork failed"<<endl;
+    return -1;
 	}
 
 
