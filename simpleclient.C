@@ -61,6 +61,32 @@ string int2string(int number) {
    return ss.str();//return a string with the contents of the stream
 }
 
+void process_request(const string & _request) {
+
+  if (_request.compare(0, 5, "hello") == 0) {
+    process_hello(_request);
+  }
+  else if (_request.compare(0, 4, "data") == 0) {
+    process_data(_request);
+  }
+  else if (request.compare("quit") == 0) {
+      cout<<"bye"<<endl;
+      return;
+   }
+  else {
+    cout<<"unknown request"<<endl;
+  }
+}
+
+void process_hello(const string & _request) {
+  cout<<"hello to you too"<<endl;
+}
+
+void process_data(const string &  _request) {
+  cout<<int2string(rand() % 100))<<endl;
+}
+
+
 /*--------------------------------------------------------------------------*/
 /* MAIN FUNCTION */
 /*--------------------------------------------------------------------------*/
