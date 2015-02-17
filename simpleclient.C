@@ -28,6 +28,7 @@
 
 #include <errno.h>
 #include <unistd.h>
+#include <stdlib.h> 
 
 #include "reqchannel.H"
 
@@ -61,6 +62,14 @@ string int2string(int number) {
    return ss.str();//return a string with the contents of the stream
 }
 
+void process_hello(const string & _request) {
+  cout<<"hello to you too"<<endl;
+}
+
+void process_data(const string &  _request) {
+  cout<<int2string(rand() % 100)<<endl;
+}
+
 void process_request(const string & _request) {
 
   if (_request.compare(0, 5, "hello") == 0) {
@@ -69,7 +78,7 @@ void process_request(const string & _request) {
   else if (_request.compare(0, 4, "data") == 0) {
     process_data(_request);
   }
-  else if (request.compare("quit") == 0) {
+  else if (_request.compare("quit") == 0) {
       cout<<"bye"<<endl;
       return;
    }
@@ -77,15 +86,6 @@ void process_request(const string & _request) {
     cout<<"unknown request"<<endl;
   }
 }
-
-void process_hello(const string & _request) {
-  cout<<"hello to you too"<<endl;
-}
-
-void process_data(const string &  _request) {
-  cout<<int2string(rand() % 100))<<endl;
-}
-
 
 /*--------------------------------------------------------------------------*/
 /* MAIN FUNCTION */
