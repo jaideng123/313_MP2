@@ -9,4 +9,4 @@ dataserver: dataserver.C reqchannel.o
 	g++ -o dataserver dataserver.C reqchannel.o -lpthread
 
 simpleclient: simpleclient.C reqchannel.o
-	g++ -o simpleclient simpleclient.C reqchannel.o
+	g++ -o simpleclient simpleclient.C reqchannel.o -lrt

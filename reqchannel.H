@@ -1,11 +1,9 @@
 /*
     File: reqchannel.H
-
     Author: R. Bettati
             Department of Computer Science
             Texas A&M University
     Date  : 2012/07/11
-
 */
 
 #ifndef _reqchannel_H_                   // include file only once
@@ -78,11 +76,9 @@ public:
      The channel has two ends, which are conveniently called "SERVER_SIDE" and "CLIENT_SIDE".
      If two processes connect through a channel, one has to connect on the server side 
      and the other on the client side. Otherwise the results are unpredictable.
-
      NOTE: If the creation of the request channel fails (typically happens when too many
      request channels are being created) and error message is displayed, and the program
      unceremoniously exits.
-
      NOTE: It is easy to open too many request channels in parallel. In some systems,
      limits on the number of open files per process limit the number of established
      request channels to 125 or less.
@@ -115,5 +111,3 @@ public:
 
 
 #endif
-
-
